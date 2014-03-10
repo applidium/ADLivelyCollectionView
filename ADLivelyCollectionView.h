@@ -1,6 +1,6 @@
 //
-//  ADLivelyTableView.h
-//  ADLivelyTableView
+//  ADLivelyCollectionView.h
+//  ADLivelyCollectionView
 //
 //  Created by Romain Goyet on 18/04/12.
 //  Copyright (c) 2012 Applidium. All rights reserved.

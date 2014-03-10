@@ -1,6 +1,6 @@
 //
-//  ADLivelyTableView.m
-//  ADLivelyTableView
+//  ADLivelyCollectionView.m
+//  ADLivelyCollectionView
 //
 //  Created by Romain Goyet on 18/04/12.
 //  Copyright (c) 2012 Applidium. All rights reserved.
@@ -124,7 +124,7 @@ ADLivelyTransform ADLivelyTransformWave = ^(CALayer * layer, float speed){
     }
 }
 
-#pragma mark - ADLivelyTableView
+#pragma mark - ADLivelyCollectionView
 - (CGPoint)scrollSpeed {
     return CGPointMake(_lastScrollPosition.x - _currentScrollPosition.x,
                        _lastScrollPosition.y - _currentScrollPosition.y);
