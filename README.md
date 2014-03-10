@@ -1,12 +1,12 @@
-# ADLivelyTableView - UITableView with style
+# ADLivelyCollectionView - UICollectionView with style
 
-ADLivelyTableView is a drop-in subclass of UITableView that lets you add custom animations to any UITableView.
+ADLivelyCollectionView is a drop-in subclass of UICollectionView that lets you add custom animations to any UICollectionView.
 
 It's rather simple to use :
 
-*   Add ADLivelyTableView.h and ADLivelyTableView.m to your iOS project
+*   Add ADLivelyCollectionView.h and ADLivelyCollectionView.m to your iOS project
 *   Link against the QuartzCore framework if you don't already
-*   Turn any UITableView you want to animate (or subclass thereof) into a subclass of ADLivelyTableView
-*   Pick whichever animation you like, like this : ``livelyTableView.initialCellTransformBlock = ADLivelyTransformFan;``
+*   Turn any UICollectionView you want to animate (or subclass thereof) into a subclass of ADLivelyCollectionView
+*   Pick whichever animation you like, like this : ``livelyCollectionView.initialCellTransformBlock = ADLivelyTransformFan;``
 
 You can also write your own initial transform block.
