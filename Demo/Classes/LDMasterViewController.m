@@ -33,9 +33,9 @@
     [super viewDidLoad];
     UIBarButtonItem * transitionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pickTransform:)];
     self.navigationItem.rightBarButtonItem = transitionButton;
-    ADLivelyCollectionView * livelyTableView = (ADLivelyCollectionView *)self.view;
-    [livelyTableView registerNib:[UINib nibWithNibName:@"LDCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
-    livelyTableView.initialCellTransformBlock = ADLivelyTransformFan;
+    ADLivelyCollectionView * livelyCollectionView = (ADLivelyCollectionView *)self.view;
+    [livelyCollectionView registerNib:[UINib nibWithNibName:@"LDCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
+    livelyCollectionView.initialCellTransformBlock = ADLivelyTransformFan;
     [transitionButton release];
 }
 
@@ -55,11 +55,11 @@
 
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    ADLivelyCollectionView * livelyTableView = (ADLivelyCollectionView *)self.view;
+    ADLivelyCollectionView * livelyCollectionView = (ADLivelyCollectionView *)self.view;
     NSArray * transforms = [NSArray arrayWithObjects:ADLivelyTransformFan, ADLivelyTransformCurl, ADLivelyTransformFade, ADLivelyTransformHelix, ADLivelyTransformWave, nil];
 
     if (buttonIndex < [transforms count]) {
-        livelyTableView.initialCellTransformBlock = [transforms objectAtIndex:buttonIndex];
+        livelyCollectionView.initialCellTransformBlock = [transforms objectAtIndex:buttonIndex];
     }
 }
 

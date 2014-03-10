@@ -85,11 +85,11 @@ ADLivelyTransform ADLivelyTransformWave = ^(CALayer * layer, float speed){
 
 #pragma mark - UIView
 + (Class)layerClass {
-    // This lets us rotate cells in the tableview's 3D space
+    // This lets us rotate cells in the collectionview's 3D space
     return [CATransformLayer class];
 }
 
-#pragma mark - UITableView
+#pragma mark - UICollectionView
 - (void)setDelegate:(id<UICollectionViewDelegate>)delegate {
     // The order here is important, as there seem to be some observing done on setDelegate:
     if (delegate == self) {
