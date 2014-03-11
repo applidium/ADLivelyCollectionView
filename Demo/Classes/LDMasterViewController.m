@@ -18,7 +18,7 @@
         self.title = @"ADLivelyDemo";
         _objects = [[NSMutableArray alloc] init];
         for (int i = 0; i < 200; i++) {
-            [(NSMutableArray *)_objects addObject:[NSString stringWithFormat:@"#%d", i]];
+            [(NSMutableArray *)_objects addObject:[NSString stringWithFormat:@"Lively cell #%d", i]];
         }
     }
     return self;
