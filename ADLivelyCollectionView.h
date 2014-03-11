@@ -18,6 +18,7 @@ extern ADLivelyTransform ADLivelyTransformFlip;
 extern ADLivelyTransform ADLivelyTransformHelix;
 extern ADLivelyTransform ADLivelyTransformTilt;
 extern ADLivelyTransform ADLivelyTransformWave;
+extern ADLivelyTransform ADLivelyTransformGrow;
 
 @interface ADLivelyCollectionView : UICollectionView <UICollectionViewDelegate, UICollectionViewDataSource> {
     id <UICollectionViewDelegate>  _preLivelyDelegate;

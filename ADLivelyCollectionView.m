@@ -76,6 +76,13 @@ ADLivelyTransform ADLivelyTransformWave = ^(CALayer * layer, float speed){
     return ADLivelyDefaultDuration;
 };
 
+ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
+    if (speed != 0.0f) { // Don't animate the initial state
+        layer.transform = CATransform3DMakeScale(0.0, 0.0, 1.0);
+    }
+    return ADLivelyDefaultDuration;
+};
+
 @implementation ADLivelyCollectionView
 #pragma mark - NSObject
 - (void)dealloc {
