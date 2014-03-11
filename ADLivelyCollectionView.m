@@ -161,19 +161,17 @@ ADLivelyTransform ADLivelyTransformWave = ^(CALayer * layer, float speed){
     float speed = self.scrollSpeed.y;
     float normalizedSpeed = MAX(-1.0f, MIN(1.0f, speed/20.0f));
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (_transformBlock) {
-            NSTimeInterval animationDuration = _transformBlock(cell.layer, normalizedSpeed);
-            // The block-based equivalent doesn't play well with iOS 4
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationDuration:animationDuration];
-        }
-        cell.layer.transform = CATransform3DIdentity;
-        cell.layer.opacity = 1.0f;
-        if (_transformBlock) {
-            [UIView commitAnimations];
-        }
-    });
+    if (_transformBlock) {
+        NSTimeInterval animationDuration = _transformBlock(cell.layer, normalizedSpeed);
+        // The block-based equivalent doesn't play well with iOS 4
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:animationDuration];
+    }
+    cell.layer.transform = CATransform3DIdentity;
+    cell.layer.opacity = 1.0f;
+    if (_transformBlock) {
+        [UIView commitAnimations];
+    }
 
     return cell;
 }
