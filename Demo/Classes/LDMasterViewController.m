@@ -48,7 +48,7 @@
                                                               delegate:self
                                                      cancelButtonTitle:@"Cancel"
                                                 destructiveButtonTitle:nil
-                                                     otherButtonTitles:@"Fan", @"Curl", @"Fade", @"Helix", @"Wave", nil];
+                                                     otherButtonTitles:@"Fan", @"Curl", @"Fade", @"Helix", @"Tilt", @"Flip", @"Wave", @"Grow", nil];
     [actionSheet showFromBarButtonItem:sender animated:YES];
     [actionSheet release];
 }
@@ -56,7 +56,7 @@
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     ADLivelyCollectionView * livelyCollectionView = (ADLivelyCollectionView *)self.view;
-    NSArray * transforms = [NSArray arrayWithObjects:ADLivelyTransformFan, ADLivelyTransformCurl, ADLivelyTransformFade, ADLivelyTransformHelix, ADLivelyTransformWave, nil];
+    NSArray * transforms = [NSArray arrayWithObjects:ADLivelyTransformFan, ADLivelyTransformCurl, ADLivelyTransformFade, ADLivelyTransformHelix, ADLivelyTransformTilt, ADLivelyTransformFlip, ADLivelyTransformWave, ADLivelyTransformGrow, nil];
 
     if (buttonIndex < [transforms count]) {
         livelyCollectionView.initialCellTransformBlock = [transforms objectAtIndex:buttonIndex];
