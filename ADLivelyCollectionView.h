@@ -30,5 +30,5 @@ extern ADLivelyTransform ADLivelyTransformGrow;
 - (CGPoint)scrollSpeed;
 - (void)setInitialCellTransformBlock:(ADLivelyTransform)block;
 
-@property (nonatomic, assign) CGFloat speedThreshold;
+@property (nonatomic, assign) CGFloat speedThreshold; // optional, disables animations when exceeding this speed
 @end
