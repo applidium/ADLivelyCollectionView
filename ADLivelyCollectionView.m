@@ -168,7 +168,13 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
     float speed = self.scrollSpeed.y;
     float normalizedSpeed = MAX(-1.0f, MIN(1.0f, speed/20.0f));
 
-    if (_transformBlock) {
+    BOOL shouldAnimate = YES;
+
+    if (self.speedThreshold) {
+        shouldAnimate = fabsf(speed) < self.speedThreshold;
+    }
+
+    if (_transformBlock && shouldAnimate) {
         NSTimeInterval animationDuration = _transformBlock(cell.layer, normalizedSpeed);
         // The block-based equivalent doesn't play well with iOS 4
         [UIView beginAnimations:nil context:NULL];

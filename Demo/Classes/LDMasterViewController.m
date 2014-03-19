@@ -36,6 +36,8 @@
     ADLivelyCollectionView * livelyCollectionView = (ADLivelyCollectionView *)self.view;
     [livelyCollectionView registerNib:[UINib nibWithNibName:@"LDCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
     livelyCollectionView.initialCellTransformBlock = ADLivelyTransformFan;
+
+    livelyCollectionView.speedThreshold = 20;
     [transitionButton release];
 }
 
