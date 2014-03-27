@@ -12,3 +12,6 @@ It's rather simple to use :
 *   Pick whichever animation you like, like this : ``livelyCollectionView.initialCellTransformBlock = ADLivelyTransformFan;``
 
 You can also write your own initial transform block.
+
+## Compatibility
+This project does not use ARC. To add ADLivelyCollectionView to a project using ARC, set the compiler flag `-fno-objc-arc` for the source file `ADLivelyCollectionView.m` in Targets → Build Phases → Compile Sources (double click on the right column of the row under Compiler Flags).
