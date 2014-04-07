@@ -104,7 +104,7 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
     } else {
         _preLivelyDelegate = delegate;
     }
-    [super setDelegate:self];
+    [super setDelegate:delegate];
 }
 
 - (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {
