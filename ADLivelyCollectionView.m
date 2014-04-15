@@ -107,6 +107,10 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
     [super setDelegate:self];
 }
 
+- (id<UICollectionViewDelegate>)delegate {
+    return _preLivelyDelegate;
+}
+
 - (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {
     // The order here is important, as there seem to be some observing done on setDelegate:
     if (dataSource == self) {
@@ -115,6 +119,10 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
         _preLivelyDataSource = dataSource;
     }
     [super setDataSource:self];
+}
+
+- (id<UICollectionViewDataSource>)dataSource {
+    return _preLivelyDataSource;
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector {
